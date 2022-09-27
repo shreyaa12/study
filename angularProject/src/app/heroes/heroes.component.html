@@ -12,11 +12,23 @@
       <a routerLink="/detail/{{hero.id}}">
         <span class="name">{{hero.name}}</span> 
       </a>
+      <button type="button" class="delete-button" (click)="delete(hero)">X</button>
     </li>
+   
   </ul>
-<!-- diplay details -->
+  
+<!--- diplay details --->
+
+<div>
+  <label>Hero name:</label>
+  <input id='hero-name' class="hero-name" #heroName/>
+  <button type="button" class="add-button" (click)="add(heroName.value);heroName.value=''">Add Hero</button>
+</div>
+
+
+
 <!-- Input binding child  -->
-<app-messages></app-messages>
+
 <!-- <app-hero-detail [hero] = 'selectedHero'></app-hero-detail> -->
 
 <!-- Display Details -->

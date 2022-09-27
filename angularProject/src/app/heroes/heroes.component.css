@@ -64,3 +64,8 @@
   .heroes .name {
     align-self: center;
   }
+
+.delete-button{
+background-color: red;
+color: white;
+}
