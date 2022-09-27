@@ -65,7 +65,11 @@
     align-self: center;
   }
 
-.delete-button{
-background-color: red;
-color: white;
+.delete_button{
+color: red;
+flex:0;
+border: none;
+background: none;
+height: 1.5em;
+margin: 0.5em;
 }
