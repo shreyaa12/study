@@ -1,23 +1,49 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
-import { ListEmployeeComponent } from './list-employee/list-employee.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import {MatButton, MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddEmployeeComponent,
-    EditEmployeeComponent,
-    ListEmployeeComponent
+    
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatMenuModule,
+    BrowserAnimationsModule
   ],
+
+  exports:[
+    BrowserModule, 
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatMenuModule,
+    BrowserAnimationsModule],
+
   providers: [],
   bootstrap: [AppComponent]
 })
