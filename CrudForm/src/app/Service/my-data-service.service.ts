@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,26 +13,26 @@ export class MyDataServiceService {
   constructor(private httpClient : HttpClient) { }
 
   //To get the employee
-  getEmployees(){
+  getEmployees():Observable<any>{
     return this.httpClient.get(`${this.api}`);
   }
 
-  getEmployeeById(empid: any){
+  getEmployeeById(empid: any):Observable<any>{
     return this.httpClient.get(`${this.api}/${empid}`)
   }
 
   //edit employeebyId
-  editEmployeeById(empid: any,body: any) {
+  editEmployeeById(empid: any,body: any):Observable<any> {
     return this.httpClient.post(`${this.api}/editEmp/${empid}`, body);
   }
 
   //add Employee
-  addEmployee(body: any){
+  addEmployee(body: any):Observable<any>{
     return this.httpClient.post(`${this.api}/addEmp`,body);
   }
 
   //delete Employee
-  deleteEmployee(id:any){
+  deleteEmployee(id:any):Observable<any>{
     return this.httpClient.delete(`${this.api}/deleteEmp/${id}`);
   }
 

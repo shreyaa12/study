@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MeanStackCrudComponent } from "./mean-stack-crud/mean-stack-crud.component";
+import {AddEmployeeComponent} from './Component/add-employee/add-employee.component';
+import { ListEmployeeComponent } from './Component/list-employee/list-employee.component';
+import { UpdateEmployeeComponent } from './Component/update-employee/update-employee.component';
+
+
 
 const routes: Routes = [
-  {path:'',redirectTo:'',pathMatch:'full'},
-  { 
-    path: 'Crud', 
-    loadChildren: () => import('./mean-stack-crud/mean-stack-crud.component').then(m => m.MeanStackCrudComponent)
-    },
-  
+  { path: '', redirectTo: 'employees', pathMatch: 'full' },
+  { path: 'employees', component: ListEmployeeComponent },
+  { path: 'employees/:id', component: UpdateEmployeeComponent },
+  { path: 'addEmp', component: AddEmployeeComponent }
 ];
 
 @NgModule({
