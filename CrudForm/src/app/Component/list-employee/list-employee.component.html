@@ -20,10 +20,9 @@
           class="list-group-item"
           *ngFor="let emp of employees; let i = index"
           [class.active]="i == currentIndex"
-          (click)="setActiveTutorial(emp, i)"
-        >
+          (click)="setActiveTutorial(emp, i)">
           {{ emp.firstName }}
-          
+          {{emp._id}}
         </li>
       </ul>
   

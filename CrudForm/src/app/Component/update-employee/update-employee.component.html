@@ -17,10 +17,14 @@
         <label><strong>Phone:</strong></label>
         {{ currentEmp.phone }} 
       </div>
+      <div>
+        <label><strong>id:</strong></label>
+        {{ currentEmp._id }} 
+      </div>
   
       <a
         class="badge badge-warning"
-        routerLink="[`/${currentIndex}]">
+        routerLink="[`/editEmp/${_id}]">
         Edit
       </a>
     </div>
@@ -164,7 +168,7 @@
       Publish
     </button> -->
 
-    <button class="badge badge-danger mr-2" (click)="deleteEmployee(currentEmp.email)">
+    <button class="badge badge-danger mr-2" (click)="deleteEmployee(currentEmp)">
       Delete
     </button>
 <!-- 

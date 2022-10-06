@@ -37,8 +37,11 @@ export class ListEmployeeComponent implements OnInit {
   }
   setActiveTutorial(emp: Employee, index: number): void {
     this.currentEmp = emp;
+    // this.currentEmp = ObjectId(_id)
     this.currentIndex = index;
-    console.log("current Emp",this.currentEmp);
+    console.log("current Emp on click of every data",this.currentEmp);
+    console.log("objectId",);
+    
     console.log("current Index",this.currentIndex);
     
     

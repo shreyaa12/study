@@ -13,17 +13,22 @@ export class UpdateEmployeeComponent implements OnInit {
 
 
   @Input() viewMode = false;
-  @Input() currentEmp = new Employee ;
+  @Input() currentEmp : Employee | any;
+
+
 
   message : '' | undefined;
-published: any;
+  published: any;
 
   constructor(private EmpService : MyDataServiceService,private router : Router, private activatedRoute : ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    console.log('JSOn',JSON.stringify(this.currentEmp));
+    
     if (!this.viewMode) {
-      this.message = '';
+      this.message = '';       
       this.getEmployee(this.activatedRoute.snapshot.params["id"]);
+
     }
   }
   getEmployee(id: any): void {
