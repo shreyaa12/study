@@ -34,21 +34,21 @@ export class UpdateEmployeeComponent implements OnInit {
   getEmployee(id: any): void {
     this.EmpService.getEmployeeById(id)
       .subscribe({
-        next: (data) => {
+        next: (data:any) => {
           this.currentEmp = data;
           console.log(data);
         },
-        error: (e) => console.error(e)
+        error: (e:any) => console.error(e)
       });
   }
   deleteEmployee(id:any): void {
     this.EmpService.deleteEmployee(id)
       .subscribe({
-        next: (res) => {
+        next: (res:any) => {
           console.log(res);
           this.router.navigate(['/Employee']);
         },
-        error: (e) => console.error(e)
+        error: (e:any) => console.error(e)
       });
   }
 
