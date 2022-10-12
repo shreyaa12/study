@@ -24,7 +24,7 @@ export class ListEmployeeComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.employees = data;
-          console.log(data);
+          // console.log(data);
           
           
         },
@@ -39,10 +39,10 @@ export class ListEmployeeComponent implements OnInit {
     this.currentEmp = emp;
     // this.currentEmp = ObjectId(_id)
     this.currentIndex = index;
-    console.log("current Emp on click of every data",this.currentEmp);
-    console.log("objectId",);
+    // console.log("current Emp on click of every data",this.currentEmp);
+    // console.log("objectId",);
     
-    console.log("current Index",this.currentIndex);
+    // console.log("current Index",this.currentIndex);
     
     
   }

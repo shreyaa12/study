@@ -55,7 +55,7 @@ employeeRoute.route('/editEmp/:id').put(function(req, res){
             employee.firstName = req.body.firstName;
             employee.lastName = req.body.lastName;
             employee.email = req.body.email;
-            employee.phone= req.body.phome;
+            employee.phone= req.body.phone;
             employee.save().then(
                 res.status(200).json("Updated employee succcessfully")
             ).catch( err => {

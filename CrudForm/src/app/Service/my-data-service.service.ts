@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 export class MyDataServiceService {
 
   //Main api to call employees
-  api = 'http://localhost:4000/employees/';
+  api = 'http://localhost:4000/employees';
 
   constructor(private httpClient : HttpClient) { }
 
@@ -23,7 +23,7 @@ export class MyDataServiceService {
 
   //edit employeebyId
   editEmployeeById(empid: any,body: any):Observable<any> {
-    return this.httpClient.post(`${this.api}/editEmp/${empid}`, body);
+    return this.httpClient.put(`${this.api}/editEmp/${empid}`, body);
   }
 
   //add Employee
