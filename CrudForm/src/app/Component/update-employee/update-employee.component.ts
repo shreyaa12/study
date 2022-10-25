@@ -15,7 +15,7 @@ export class UpdateEmployeeComponent implements OnInit {
   @Input() viewMode = false;
   @Input() currentEmp : Employee | any;
 
-
+  employee = new Employee  ;
 
   message : '' | undefined;
   published: any;
@@ -23,8 +23,6 @@ export class UpdateEmployeeComponent implements OnInit {
   constructor(private EmpService : MyDataServiceService,private router : Router, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void { 
-    console.log('JSOn',JSON.stringify(this.currentEmp));
-    
     if (!this.viewMode) {
       this.message = '';       
       this.getEmployee(this.activatedRoute.snapshot.params["id"]);
@@ -36,7 +34,7 @@ export class UpdateEmployeeComponent implements OnInit {
       .subscribe({
         next: (data:any) => {
           this.currentEmp = data;
-          console.log(data);
+          // console.log(data);
         },
         error: (e:any) => console.error(e)
       });
@@ -45,23 +43,26 @@ export class UpdateEmployeeComponent implements OnInit {
     this.EmpService.deleteEmployee(id)
       .subscribe({
         next: (res:any) => {
-          console.log(res);
-          this.router.navigate(['/Employee']);
+          // console.log(res);
+          this.router.navigate(['employees']);
         },
         error: (e:any) => console.error(e)
       });
   }
 
   
-  saveEmployee(email:any):void{
-    // this.EmpService.editEmployeeById(id:any, this.currentEmp)
-    //   .subscribe({
-    //     next: (res) => {
-    //       console.log(res);
-    //       this.message = res.message ? res.message : 'This tutorial was updated successfully!';
-    //     },
-    //     error: (e) => console.error(e)
-    //   });
+  updateEmployee():void{
+    console.log("this employee pass",this.currentEmp);
+    
+    this.EmpService.editEmployeeById(this.currentEmp._id,this.currentEmp)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.message = res.message ? res.message : 'This tutorial was updated successfully!';
+          this.router.navigate(['employees']);
+        },
+        error: (e) => console.error(e)
+      });
   }
   
   
