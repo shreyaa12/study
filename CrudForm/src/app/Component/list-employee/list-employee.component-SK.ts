@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyDataServiceService } from 'src/app/Service/my-data-service.service';
 import { Employee } from 'src/app/Model/employee.model';
+import { SearchFilterPipe } from 'src/app/search-filter.pipe';
 
 @Component({
   selector: 'app-list-employee',
@@ -24,9 +25,6 @@ export class ListEmployeeComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.employees = data;
-          // console.log(data);
-          
-          
         },
         error: (e) => console.error(e)
       });
@@ -37,12 +35,8 @@ export class ListEmployeeComponent implements OnInit {
   }
   setActiveTutorial(emp: Employee, index: number): void {
     this.currentEmp = emp;
-    // this.currentEmp = ObjectId(_id)
     this.currentIndex = index;
-    // console.log("current Emp on click of every data",this.currentEmp);
-    // console.log("objectId",);
-    
-    // console.log("current Index",this.currentIndex);
+   
     
     
   }
